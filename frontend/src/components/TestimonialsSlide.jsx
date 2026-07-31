@@ -12,7 +12,7 @@ const testimonials = [
     name: 'Anjali Desai',
     role: 'South Indian Bride',
     img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200',
-    text: '"Siri understood exactly what I wanted. The makeup was flawless, felt weightless, and looked incredible in both daylight and evening reception lights. Truly the best decision I made for my wedding."',
+    text: '"Siri made me feel confident throughout my wedding day. The makeup looked flawless from morning till the reception, and I received so many compliments."',
     rating: 5,
     hasVideo: true,
   },
@@ -21,7 +21,7 @@ const testimonials = [
     name: 'Meera Reddy',
     role: 'Engagement Client',
     img: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=200',
-    text: '"The glass-skin finish was exactly what I dreamed of. Her attention to detail and calm demeanor made the getting-ready process so relaxing."',
+    text: '"The engagement look was exactly what I imagined. Elegant, natural, and beautifully suited to my outfit. Thank you for making my special day memorable."',
     rating: 5,
     hasVideo: false,
   },
@@ -57,7 +57,7 @@ const TestimonialsSlide = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <SectionHeading className="text-4xl md:text-6xl mb-6">Love<br/>Letters.</SectionHeading>
+              <SectionHeading className="text-4xl md:text-6xl mb-6">What Our Brides Say</SectionHeading>
               <p className="text-zinc-400 text-lg font-light max-w-md">
                 Don't just take our word for it. Hear from the brides who trusted us with their most important moments.
               </p>

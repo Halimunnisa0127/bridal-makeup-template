@@ -11,11 +11,11 @@ import BackToTop from './components/BackToTop';
 const HeroSlide = React.lazy(() => import('./components/HeroSlide'));
 const AboutSlide = React.lazy(() => import('./components/AboutSlide'));
 const ServicesSlide = React.lazy(() => import('./components/ServicesSlide'));
-const PortfolioSlide = React.lazy(() => import('./components/PortfolioSlide'));
+
 const PackagesSlide = React.lazy(() => import('./components/PackagesSlide'));
 const WhyChooseUsSlide = React.lazy(() => import('./components/WhyChooseUsSlide'));
 const TestimonialsSlide = React.lazy(() => import('./components/TestimonialsSlide'));
-const InstagramSlide = React.lazy(() => import('./components/InstagramSlide'));
+
 const AppointmentSlide = React.lazy(() => import('./components/AppointmentSlide'));
 const ContactSlide = React.lazy(() => import('./components/ContactSlide'));
 const FooterSlide = React.lazy(() => import('./components/FooterSlide'));
@@ -23,7 +23,7 @@ const FooterSlide = React.lazy(() => import('./components/FooterSlide'));
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 12;
+  const totalSlides = 10;
 
   const handleScroll = (e) => {
     const slideIndex = Math.round(e.target.scrollTop / window.innerHeight);
@@ -49,11 +49,11 @@ function App() {
           <HeroSlide />
           <AboutSlide />
           <ServicesSlide />
-          <PortfolioSlide />
+
           <PackagesSlide />
           <WhyChooseUsSlide />
           <TestimonialsSlide />
-          <InstagramSlide />
+
           <AppointmentSlide />
           <ContactSlide />
           <FooterSlide />

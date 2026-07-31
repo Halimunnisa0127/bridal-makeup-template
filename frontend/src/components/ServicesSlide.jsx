@@ -10,12 +10,20 @@ import bride3 from "../assets/images/bride3.jpg"
 import bride4 from "../assets/images/bride4.jpg"
 import mehandi from "../assets/images/mehandi.jpg"
 import mehandi1 from "../assets/images/mehandi1.jpg"
+import mehandi2 from "../assets/images/mehandi2.jpg"
+import mehandi3 from "../assets/images/mehandi3.jpg"
 import haldi from "../assets/images/haldi.jpg"
 import haldi1 from "../assets/images/haldi1.avif"
+import haldi2 from "../assets/images/haldi2.jpg"
+import haldi3 from "../assets/images/haldi3.jpg"
 import babyshower from "../assets/images/babyshower.jpg"
 import babyshower1 from "../assets/images/babyshower1.jpg"
 import babyshower2 from "../assets/images/babyshower2.jpg"
-import enagement from "../assets/images/enagement1.jpg"
+import babyshower3 from "../assets/images/babyshower3.jpg"
+import enagement1 from "../assets/images/enagement1.jpg"
+import enagement2 from "../assets/images/enagement2.jpg"
+import enagement3 from "../assets/images/enagement3.jpg"
+import enagement4 from "../assets/images/enagement4.jpg"
 
 const categories = ['Traditional Bride', 'Engagement', 'Haldi', 'Mehendi', 'Baby Shower'];
 
@@ -27,22 +35,33 @@ const galleryData = {
     bride4
   ],
   'Engagement': [
-    enagement
+    enagement1,
+    enagement2,
+    enagement3,
+    enagement4
+
+
+
   ],
 
   'Haldi': [
-    haldi, 
-    haldi1, 
+    haldi,
+    haldi1,
+    haldi2,
+    haldi3
   ],
 
   'Mehendi': [
     mehandi,
-    mehandi1
+    mehandi1,
+     mehandi2,
+      mehandi3
   ],
   'Baby Shower': [
     babyshower,
     babyshower1,
-    babyshower2
+    babyshower2,
+    babyshower3
   ]
 };
 
