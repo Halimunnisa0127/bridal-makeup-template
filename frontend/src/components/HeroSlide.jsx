@@ -12,16 +12,19 @@ const HeroSlide = () => {
   const y = useTransform(scrollY, [0, 1000], [0, 300]);
 
   return (
-    <SlideSection className="relative overflow-hidden justify-center pt-20 bg-slate-950">
-      {/* Background Image with Parallax */}
+    <SlideSection className="relative overflow-hidden justify-center bg-slate-950">
+      {/* Background Champagne Glow / Light Bloom */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full lg:w-[60%] h-[120%] bg-[#e3cd81]/15 rounded-[100%] blur-[120px] z-0 pointer-events-none" />
+
+      {/* Background Image with Parallax and Soft Mask */}
       <motion.div 
-        style={{ y }}
-        className="absolute top-24 right-0 bottom-0 w-full lg:w-[45%] z-0 opacity-30 lg:opacity-100"
+        style={{ 
+          y,
+          maskImage: 'linear-gradient(to right, transparent, black 30%, black)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent, black 30%, black)'
+        }}
+        className="absolute inset-y-0 right-0 w-full lg:w-[50%] z-0"
       >
-        {/* Fade smoothly into the dark background (Left edge fade on desktop) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-transparent z-10 hidden lg:block" />
-        {/* Bottom edge fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10" />
         <img 
           src={sareeImage} 
           alt="Luxury South Indian Bridal Portrait"

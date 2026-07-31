@@ -1,6 +1,5 @@
 import React, { useState, Suspense, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import Navbar from './components/Navbar';
 import SlideProgressIndicator from './components/SlideProgressIndicator';
 import AnimatedBackground from './components/AnimatedBackground';
 import FloatingBlobs from './components/FloatingBlobs';
@@ -17,7 +16,6 @@ const PackagesSlide = React.lazy(() => import('./components/PackagesSlide'));
 const WhyChooseUsSlide = React.lazy(() => import('./components/WhyChooseUsSlide'));
 const TestimonialsSlide = React.lazy(() => import('./components/TestimonialsSlide'));
 const InstagramSlide = React.lazy(() => import('./components/InstagramSlide'));
-const FaqSlide = React.lazy(() => import('./components/FaqSlide'));
 const AppointmentSlide = React.lazy(() => import('./components/AppointmentSlide'));
 const ContactSlide = React.lazy(() => import('./components/ContactSlide'));
 const FooterSlide = React.lazy(() => import('./components/FooterSlide'));
@@ -47,7 +45,6 @@ function App() {
         className="relative h-[100dvh] min-h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-slate-950/0"
         onScroll={handleScroll}
       >
-        <Navbar />
         <Suspense fallback={<div className="h-[100dvh] w-full" />}>
           <HeroSlide />
           <AboutSlide />
@@ -57,7 +54,6 @@ function App() {
           <WhyChooseUsSlide />
           <TestimonialsSlide />
           <InstagramSlide />
-          <FaqSlide />
           <AppointmentSlide />
           <ContactSlide />
           <FooterSlide />
