@@ -20,7 +20,7 @@ const AboutSlide = () => {
   };
 
   return (
-    <SlideSection id="about" className="justify-center py-24 md:py-32 overflow-hidden relative">
+    <SlideSection id="about" className="justify-center py-24 md:py-6 overflow-hidden relative">
       <Container className="h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 h-full items-center">
           
@@ -33,7 +33,7 @@ const AboutSlide = () => {
               hidden: { opacity: 0, scale: 0.95 },
               visible: { opacity: 1, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
             }}
-            className="relative h-[50vh] lg:h-[80vh] rounded-3xl overflow-hidden group lg:-mt-12"
+            className="relative h-[50vh] lg:h-[80vh] rounded-3xl overflow-hidden group lg:-mt-3"
           >
             <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-700 z-10" />
             <img 
@@ -44,7 +44,7 @@ const AboutSlide = () => {
             />
             
             <div className="absolute bottom-8 left-8 right-8 z-20">
-              <GlassCard className="p-6 backdrop-blur-xl bg-slate-950/40 border-white/10 hover:border-white/20">
+              <GlassCard className="p-2 backdrop-blur-xl bg-slate-950/40 border-white/10 hover:border-white/20">
                 <div className="flex justify-between items-center">
                   <div>
                     <div className="text-3xl text-white font-medium">12+</div>
@@ -69,8 +69,8 @@ const AboutSlide = () => {
             className="flex flex-col justify-center space-y-12"
           >
             <motion.div variants={fadeUp} className="space-y-4">
-              <SectionHeading className="text-4xl md:text-5xl">The Visionary Behind the Brush</SectionHeading>
-              <p className="text-lg text-zinc-300 font-light leading-relaxed">
+              <SectionHeading className="text-4xl md:text-4xl">The Visionary Behind the Brush</SectionHeading>
+              <p className="text-md text-zinc-300 font-light leading-relaxed">
                 As a certified luxury makeup artist, Siri blends traditional South Indian aesthetics with modern, editorial precision. 
                 Her philosophy is simple: enhance, never mask. Every brushstroke is tailored to reflect your unique persona on your most important day.
               </p>

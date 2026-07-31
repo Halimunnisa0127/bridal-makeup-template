@@ -32,7 +32,7 @@ const WhyChooseUsSlide = () => {
   };
 
   return (
-    <SlideSection id="why-us" className="justify-center py-24 relative overflow-hidden">
+    <SlideSection id="why-us" className="justify-center py-14 relative overflow-hidden">
       <Container className="h-full flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -58,12 +58,12 @@ const WhyChooseUsSlide = () => {
             const Icon = reason.icon;
             return (
               <motion.div key={i} variants={cardVariants} className="h-full">
-                <GlassCard className="h-full flex flex-col items-center text-center p-6 md:p-8">
-                  <div className="w-10 h-10 mb-4 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300">
-                    <Icon size={20} strokeWidth={1.5} />
+                <GlassCard className="h-full flex flex-col items-center text-center p-6 md:p-8 !border-amber-300/20 !bg-gradient-to-br !from-amber-400/5 !to-transparent hover:!border-amber-300/40 hover:!shadow-[0_0_30px_rgba(251,191,36,0.15)] group">
+                  <div className="w-12 h-12 mb-5 rounded-full bg-amber-400/10 border border-amber-300/20 flex items-center justify-center text-amber-300 group-hover:scale-110 group-hover:bg-amber-400/20 transition-all duration-300">
+                    <Icon size={22} strokeWidth={1.5} />
                   </div>
-                  <h4 className="text-white font-medium text-base md:text-lg mb-2">{reason.title}</h4>
-                  <p className="text-zinc-400 text-xs md:text-sm font-light leading-relaxed">{reason.desc}</p>
+                  <h4 className="text-amber-50 font-medium text-base md:text-lg mb-2 group-hover:text-amber-200 transition-colors">{reason.title}</h4>
+                  <p className="text-amber-200/60 text-xs md:text-sm font-light leading-relaxed">{reason.desc}</p>
                 </GlassCard>
               </motion.div>
             );

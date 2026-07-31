@@ -18,7 +18,7 @@ const AppointmentSlide = () => {
   return (
     <SlideSection id="appointment" className="justify-center py-24 relative overflow-hidden">
       <Container className="h-full flex items-center justify-center">
-        <div className="w-full max-w-2xl relative">
+        <div className="w-full max-w-lg relative">
           
           <AnimatePresence mode="wait">
             {!isSubmitted ? (
@@ -29,40 +29,40 @@ const AppointmentSlide = () => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <GlassCard className="p-8 md:p-12 backdrop-blur-2xl">
-                  <div className="text-center mb-8">
-                    <SectionHeading className="text-3xl md:text-4xl mb-3">Reserve Your Date</SectionHeading>
-                    <p className="text-zinc-400 font-light text-sm">
+                <GlassCard className="p-6 md:p-8 backdrop-blur-2xl">
+                  <div className="text-center mb-6">
+                    <SectionHeading className="text-2xl md:text-3xl mb-2">Reserve Your Date</SectionHeading>
+                    <p className="text-zinc-400 font-light text-xs">
                       Share your details, and we'll connect within 24 hours to begin your journey.
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-xs text-zinc-400 uppercase tracking-widest">Name</label>
-                        <input required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="Anjali Reddy" />
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Name</label>
+                        <input required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="Anjali Reddy" />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-xs text-zinc-400 uppercase tracking-widest">Phone</label>
-                        <input required type="tel" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="+91 98765 43210" />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-xs text-zinc-400 uppercase tracking-widest">Event Date</label>
-                        <input required type="date" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300/50 transition-colors [color-scheme:dark]" />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-xs text-zinc-400 uppercase tracking-widest">Location</label>
-                        <input required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="Venue or City" />
+                      <div className="space-y-1.5">
+                        <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Phone</label>
+                        <input required type="tel" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="+91 98765 43210" />
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-xs text-zinc-400 uppercase tracking-widest">Event Type</label>
-                      <select required className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300/50 transition-colors appearance-none">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Event Date</label>
+                        <input required type="date" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors [color-scheme:dark]" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Location</label>
+                        <input required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="Venue or City" />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Event Type</label>
+                      <select required className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors appearance-none">
                         <option value="" disabled selected className="text-zinc-500">Select event...</option>
                         <option value="bridal" className="bg-slate-900 text-white">Bridal Makeup</option>
                         <option value="engagement" className="bg-slate-900 text-white">Engagement</option>
@@ -71,12 +71,12 @@ const AppointmentSlide = () => {
                       </select>
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-xs text-zinc-400 uppercase tracking-widest">Message</label>
-                      <textarea rows={3} className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300/50 transition-colors resize-none" placeholder="Tell us about your vision..."></textarea>
+                    <div className="space-y-1.5">
+                      <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Message</label>
+                      <textarea rows={2} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors resize-none" placeholder="Tell us about your vision..."></textarea>
                     </div>
 
-                    <PrimaryButton type="submit" className="w-full py-4 text-sm mt-4">
+                    <PrimaryButton type="submit" className="w-full py-3 text-sm mt-2">
                       Submit Inquiry
                     </PrimaryButton>
                   </form>

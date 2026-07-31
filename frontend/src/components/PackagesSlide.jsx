@@ -33,7 +33,7 @@ const packages = [
 
 const PackagesSlide = () => {
   return (
-    <SlideSection id="packages" className="justify-center py-24 relative overflow-hidden">
+    <SlideSection id="packages" className="justify-center py-10 relative overflow-hidden">
       <Container className="h-full flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -42,7 +42,7 @@ const PackagesSlide = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-12 md:mb-16 shrink-0"
         >
-          <SectionHeading className="text-4xl md:text-5xl mb-4">Investment in Elegance</SectionHeading>
+          <SectionHeading className="text-4xl md:text-5xl mb-2">Investment in Elegance</SectionHeading>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto font-light">
             Transparent pricing tailored to your unique requirements.
           </p>
@@ -67,27 +67,27 @@ const PackagesSlide = () => {
                   </div>
                 )}
                 
-                <div className="text-center mb-8 pt-4">
-                  <h3 className="text-2xl text-white font-medium tracking-tight mb-1">{pkg.name}</h3>
-                  <p className="text-zinc-400 text-sm mb-6">{pkg.subtitle}</p>
-                  <div className="text-4xl text-white font-medium">{pkg.price}</div>
+                <div className="text-center mb-3 pt-2">
+                  <h3 className="text-4xl text-white font-medium tracking-tight mb-1">{pkg.name}</h3>
+                  <p className="text-zinc-400 text-xs mb-3">{pkg.subtitle}</p>
+                  <div className="text-2xl text-white font-medium">{pkg.price}</div>
                 </div>
 
-                <div className="flex-1 space-y-4 mb-8">
+                <div className="flex-1 space-y-2.5 mb-3">
                   {pkg.features.map((feature, j) => (
                     <div key={j} className="flex items-center gap-3">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${pkg.highlight ? 'bg-amber-400/10 text-amber-300' : 'bg-white/5 text-zinc-300'}`}>
-                        <Check size={12} strokeWidth={3} />
+                      <div className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${pkg.highlight ? 'bg-amber-400/10 text-amber-300' : 'bg-white/5 text-zinc-300'}`}>
+                        <Check size={10} strokeWidth={3} />
                       </div>
-                      <span className="text-zinc-300 text-sm">{feature}</span>
+                      <span className="text-zinc-300 text-xs">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {pkg.highlight ? (
-                  <PrimaryButton className="w-full py-3 text-sm">Select {pkg.name}</PrimaryButton>
+                  <PrimaryButton className="w-full py-2.5 text-sm">Select {pkg.name}</PrimaryButton>
                 ) : (
-                  <SecondaryButton className="w-full py-3 text-sm">Select {pkg.name}</SecondaryButton>
+                  <SecondaryButton className="w-full py-2.5 text-sm">Select {pkg.name}</SecondaryButton>
                 )}
               </GlassCard>
             </motion.div>
