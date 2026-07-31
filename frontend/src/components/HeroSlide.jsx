@@ -4,7 +4,7 @@ import SlideSection from './SlideSection';
 import Container from './Container';
 import { PrimaryButton, SecondaryButton } from './ButtonVariants';
 import GlassCard from './GlassCard';
-import sareeImage from '../assets/images/saree.jpg';
+import bride3  from '../assets/images/bride3.jpg';
 
 const HeroSlide = () => {
   const { scrollY } = useScroll();
@@ -26,7 +26,7 @@ const HeroSlide = () => {
         className="absolute inset-y-0 right-0 w-full lg:w-[50%] z-0"
       >
         <img 
-          src={sareeImage} 
+          src={bride3} 
           alt="Luxury South Indian Bridal Portrait"
           className="w-full h-full object-cover object-[center_top]"
         />

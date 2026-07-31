@@ -1,62 +1,171 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SlideSection from './SlideSection';
 import Container from './Container';
-import SectionHeading from './SectionHeading';
-import FlowingMenu from './FlowingMenu';
 
-const services = [
-  { id: 1, title: 'Bridal Makeup', desc: 'Signature traditional & modern bridal looks.', img: 'https://images.unsplash.com/photo-1595954421407-b6f722a4b56a?q=80&w=800&auto=format&fit=crop' },
-  { id: 2, title: 'Engagement', desc: 'Soft, radiant glows for your ring ceremony.', img: 'https://images.unsplash.com/photo-1610484784964-67258dc71f86?q=80&w=800&auto=format&fit=crop' },
-  { id: 3, title: 'Reception', desc: 'Glamorous, bold styles for the evening.', img: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop' },
-  { id: 4, title: 'HD Makeup', desc: 'Flawless camera-ready finish.', img: 'https://images.unsplash.com/photo-1629814696209-4f4fac4205ce?q=80&w=800&auto=format&fit=crop' },
-  { id: 5, title: 'Airbrush', desc: 'Weightless, long-lasting perfection.', img: 'https://images.unsplash.com/photo-1512496115851-a5083f40d336?q=80&w=800&auto=format&fit=crop' },
-  { id: 6, title: 'Saree Draping', desc: 'Professional draping in multiple styles.', img: 'https://images.unsplash.com/photo-1610031526315-bb8a53e990b7?q=80&w=800&auto=format&fit=crop' },
-  { id: 7, title: 'Hairstyling', desc: 'Intricate braids to modern waves.', img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop' },
-  { id: 8, title: 'Home Service', desc: 'Luxury salon experience at your venue.', img: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop' },
-];
+import SectionHeading from './SectionHeading';
+import bride1 from "../assets/images/bride1"
+import bride2 from "../assets/images/bride2.jpg"
+import bride3 from "../assets/images/bride3.jpg"
+import bride4 from "../assets/images/bride4.jpg"
+import mehandi from "../assets/images/mehandi.jpg"
+import mehandi1 from "../assets/images/mehandi1.jpg"
+import haldi from "../assets/images/haldi.jpg"
+import haldi1 from "../assets/images/haldi1.avif"
+import babyshower from "../assets/images/babyshower.jpg"
+import babyshower1 from "../assets/images/babyshower1.jpg"
+import babyshower2 from "../assets/images/babyshower2.jpg"
+import enagement from "../assets/images/enagement1.jpg"
+
+const categories = ['Traditional Bride', 'Engagement', 'Reception', 'Birthday Party', 'Baby Shower'];
+
+const galleryData = {
+  'Traditional Bride': [
+    bride1,
+    bride2,
+    bride3,
+    bride4
+  ],
+  'Engagement': [
+    enagement
+  ],
+
+  'Haldi': [
+
+  ],
+
+  'Mehendi': [
+    mehandi,
+    mehandi1
+  ],
+  'Baby Shower': [
+    babyshower,
+    babyshower1,
+    babyshower2
+  ]
+};
 
 const ServicesSlide = () => {
-  const menuItems = services.map(s => ({
-    link: '#',
-    text: s.title,
-    image: s.img
-  }));
+  const [activeTab, setActiveTab] = useState(categories[0]);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const currentImages = galleryData[activeTab] || [];
+  const loopedImages = [...currentImages, ...currentImages];
 
   return (
-    <SlideSection id="services" className="justify-center pt-8 pb-16 md:pt-12 md:pb-24 relative overflow-hidden">
-      <Container className="h-full flex flex-col justify-center">
+    <SlideSection id="services" className="justify-center pt-8 pb-16 md:pt-16 md:pb-24 relative overflow-hidden bg-slate-950">
+
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-amber-500/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-amber-500/5 rounded-full blur-[100px]"></div>
+      </div>
+
+      <Container className="relative z-10 h-full flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center shrink-0 mb-8"
+          className="text-center shrink-0 mb-10"
         >
-          <SectionHeading className="text-4xl md:text-5xl mb-4">Curated Experiences</SectionHeading>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto font-light">
-            A comprehensive suite of luxury services designed to make you feel extraordinary from preparation to the final reveal.
+          <SectionHeading className="text-4xl md:text-6xl mb-4 tracking-wide text-white">
+            Signature Looks
+          </SectionHeading>
+          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
+            Explore timeless bridal transformations crafted for every special occasion.
           </p>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex-1 w-full relative rounded-3xl overflow-hidden border border-white/10"
-        >
-          <FlowingMenu 
-            items={menuItems}
-            speed={15}
-            textColor="#ffffff"
-            bgColor="rgba(255,255,255,0.02)"
-            marqueeBgColor="#fbbf24"
-            marqueeTextColor="#120F17"
-            borderColor="rgba(255,255,255,0.1)"
-          />
-        </motion.div>
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12 px-4">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveTab(category)}
+              className={`relative px-6 py-3 rounded-full text-sm md:text-base transition-all duration-300 backdrop-blur-md border ${activeTab === category
+                ? 'text-slate-950 border-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.3)]'
+                : 'text-zinc-300 border-white/10 hover:border-amber-400/50 hover:bg-white/5'
+                }`}
+            >
+              {activeTab === category && (
+                <motion.div
+                  layoutId="activeTabIndicator"
+                  className="absolute inset-0 bg-amber-400 rounded-full -z-10"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10 font-medium tracking-wide">{category}</span>
+            </button>
+          ))}
+        </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="w-full relative overflow-hidden hide-scrollbar py-8"
+          >
+            <div className="flex w-[200%] animate-marquee hover:paused">
+              {loopedImages.map((src, index) => (
+                <div
+                  key={`${activeTab}-${index}`}
+                  className="w-full max-w-[280px] md:max-w-[340px] flex-shrink-0 px-3 md:px-4 cursor-pointer group"
+                  onClick={() => setSelectedImage(src)}
+                >
+                  <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden transition-all duration-500 group-hover:shadow-gold group-hover:-translate-y-2">
+                    <img
+                      src={src}
+                      alt={`${activeTab} look ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </Container>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 backdrop-blur-xl p-4 md:p-8"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-[110]"
+              onClick={() => setSelectedImage(null)}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-4xl max-h-[90vh] w-full rounded-2xl overflow-hidden shadow-2xl shadow-amber-500/20"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selectedImage}
+                alt="Enlarged signature look"
+                className="w-full h-full object-contain max-h-[90vh] rounded-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </SlideSection>
   );
 };

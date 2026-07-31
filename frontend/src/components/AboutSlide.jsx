@@ -4,7 +4,7 @@ import SlideSection from './SlideSection';
 import Container from './Container';
 import SectionHeading from './SectionHeading';
 import GlassCard from './GlassCard';
-import saree from "../assets/images/saree1.jpg"
+import bride2 from "../assets/images/bride2.jpg"
 const AboutSlide = () => {
   const stagger = {
     hidden: { opacity: 0 },
@@ -37,7 +37,7 @@ const AboutSlide = () => {
           >
             <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-700 z-10" />
             <img 
-              src={saree}
+              src={bride2}
               alt="Siri - Lead Makeup Artist"
               className="w-full h-full object-cover object-center scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out"
               loading="lazy"
