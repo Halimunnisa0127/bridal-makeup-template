@@ -4,7 +4,7 @@ import SlideSection from './SlideSection';
 import Container from './Container';
 
 import SectionHeading from './SectionHeading';
-import bride1 from "../assets/images/bride1"
+import bride1 from "../assets/images/bride1.png"
 import bride2 from "../assets/images/bride2.jpg"
 import bride3 from "../assets/images/bride3.jpg"
 import bride4 from "../assets/images/bride4.jpg"
@@ -17,7 +17,7 @@ import babyshower1 from "../assets/images/babyshower1.jpg"
 import babyshower2 from "../assets/images/babyshower2.jpg"
 import enagement from "../assets/images/enagement1.jpg"
 
-const categories = ['Traditional Bride', 'Engagement', 'Reception', 'Birthday Party', 'Baby Shower'];
+const categories = ['Traditional Bride', 'Engagement', 'Haldi', 'Mehendi', 'Baby Shower'];
 
 const galleryData = {
   'Traditional Bride': [
@@ -31,7 +31,8 @@ const galleryData = {
   ],
 
   'Haldi': [
-
+    haldi, 
+    haldi1, 
   ],
 
   'Mehendi': [
@@ -53,7 +54,7 @@ const ServicesSlide = () => {
   const loopedImages = [...currentImages, ...currentImages];
 
   return (
-    <SlideSection id="services" className="justify-center pt-8 pb-16 md:pt-16 md:pb-24 relative overflow-hidden bg-slate-950">
+    <SlideSection id="services" className="justify-center pt-8 pb-16 md:pt-4 md:pb-4 relative overflow-hidden bg-slate-950">
 
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-amber-500/10 rounded-full blur-[120px]"></div>
