@@ -8,6 +8,7 @@ import bride1 from "../assets/images/bride1.png"
 import bride2 from "../assets/images/bride2.jpg"
 import bride3 from "../assets/images/bride3.jpg"
 import bride4 from "../assets/images/bride4.jpg"
+import bride5 from "../assets/images/bride5.jpg"
 import mehandi from "../assets/images/mehandi.jpg"
 import mehandi1 from "../assets/images/mehandi1.jpg"
 import mehandi2 from "../assets/images/mehandi2.jpg"
@@ -32,7 +33,8 @@ const galleryData = {
     bride1,
     bride2,
     bride3,
-    bride4
+    bride4,
+    bride5
   ],
   'Engagement': [
     enagement1,

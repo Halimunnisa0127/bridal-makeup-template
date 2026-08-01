@@ -37,48 +37,61 @@ const AppointmentSlide = () => {
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Name</label>
-                        <input required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="Anjali Reddy" />
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      {/* Name */}
+                      <div className="relative group">
+                        <input required type="text" id="name" className="peer w-full bg-[#17171C]/80 border border-white/5 rounded-xl px-4 pt-6 pb-2 text-sm text-zinc-100 focus:outline-none focus:border-amber-500/40 focus:bg-[#1A1D24]/80 transition-all duration-500 placeholder-transparent shadow-inner" placeholder="Anjali Reddy" />
+                        <label htmlFor="name" className="absolute left-4 top-2 text-[10px] text-zinc-500 uppercase tracking-widest transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-4 peer-placeholder-shown:text-zinc-500 peer-focus:top-2 peer-focus:text-[10px] peer-focus:text-amber-500/80 cursor-text">Name</label>
                       </div>
-                      <div className="space-y-1.5">
-                        <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Phone</label>
-                        <input required type="tel" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="+91 98765 43210" />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Event Date</label>
-                        <input required type="date" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors [color-scheme:dark]" />
-                      </div>
-                      <div className="space-y-1.5">
-                        <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Location</label>
-                        <input required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors" placeholder="Venue or City" />
+                      
+                      {/* Phone */}
+                      <div className="relative group">
+                        <input required type="tel" id="phone" className="peer w-full bg-[#17171C]/80 border border-white/5 rounded-xl px-4 pt-6 pb-2 text-sm text-zinc-100 focus:outline-none focus:border-amber-500/40 focus:bg-[#1A1D24]/80 transition-all duration-500 placeholder-transparent shadow-inner" placeholder="+91 98765 43210" />
+                        <label htmlFor="phone" className="absolute left-4 top-2 text-[10px] text-zinc-500 uppercase tracking-widest transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-4 peer-placeholder-shown:text-zinc-500 peer-focus:top-2 peer-focus:text-[10px] peer-focus:text-amber-500/80 cursor-text">Phone</label>
                       </div>
                     </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Event Type</label>
-                      <select required className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors appearance-none">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      {/* Date */}
+                      <div className="relative group">
+                        <input required type="date" id="date" className="peer w-full bg-[#17171C]/80 border border-white/5 rounded-xl px-4 pt-6 pb-2 text-sm text-zinc-100 focus:outline-none focus:border-amber-500/40 focus:bg-[#1A1D24]/80 transition-all duration-500 shadow-inner [color-scheme:dark]" />
+                        <label htmlFor="date" className="absolute left-4 top-2 text-[10px] text-zinc-500 uppercase tracking-widest transition-all duration-300 peer-focus:text-amber-500/80 cursor-text">Event Date</label>
+                      </div>
+
+                      {/* Location */}
+                      <div className="relative group">
+                        <input required type="text" id="location" className="peer w-full bg-[#17171C]/80 border border-white/5 rounded-xl px-4 pt-6 pb-2 text-sm text-zinc-100 focus:outline-none focus:border-amber-500/40 focus:bg-[#1A1D24]/80 transition-all duration-500 placeholder-transparent shadow-inner" placeholder="Venue or City" />
+                        <label htmlFor="location" className="absolute left-4 top-2 text-[10px] text-zinc-500 uppercase tracking-widest transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-4 peer-placeholder-shown:text-zinc-500 peer-focus:top-2 peer-focus:text-[10px] peer-focus:text-amber-500/80 cursor-text">Location</label>
+                      </div>
+                    </div>
+
+                    {/* Event Type */}
+                    <div className="relative group">
+                      <select required id="event" className="peer w-full bg-[#17171C]/80 border border-white/5 rounded-xl px-4 pt-6 pb-2 text-sm text-zinc-100 focus:outline-none focus:border-amber-500/40 focus:bg-[#1A1D24]/80 transition-all duration-500 shadow-inner appearance-none cursor-pointer">
                         <option value="" disabled selected className="text-zinc-500">Select event...</option>
-                        <option value="bridal" className="bg-slate-900 text-white">Bridal Makeup</option>
-                        <option value="engagement" className="bg-slate-900 text-white">Engagement</option>
-                        <option value="reception" className="bg-slate-900 text-white">Reception</option>
-                        <option value="party" className="bg-slate-900 text-white">Party Makeup</option>
+                        <option value="bridal" className="bg-[#17171C] text-white">Bridal Makeup</option>
+                        <option value="engagement" className="bg-[#17171C] text-white">Engagement</option>
+                        <option value="reception" className="bg-[#17171C] text-white">Reception</option>
+                        <option value="party" className="bg-[#17171C] text-white">Party Makeup</option>
                       </select>
+                      <label htmlFor="event" className="absolute left-4 top-2 text-[10px] text-zinc-500 uppercase tracking-widest transition-all duration-300 peer-focus:text-amber-500/80 cursor-pointer">Event Type</label>
+                      
+                      {/* Custom dropdown arrow */}
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-500 peer-focus:text-amber-500/80 transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                      </div>
                     </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-[10px] text-zinc-400 uppercase tracking-widest">Message</label>
-                      <textarea rows={2} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300/50 transition-colors resize-none" placeholder="Tell us about your vision..."></textarea>
+                    {/* Message */}
+                    <div className="relative group">
+                      <textarea id="message" rows={2} className="peer w-full bg-[#17171C]/80 border border-white/5 rounded-xl px-4 pt-6 pb-2 text-sm text-zinc-100 focus:outline-none focus:border-amber-500/40 focus:bg-[#1A1D24]/80 transition-all duration-500 placeholder-transparent shadow-inner resize-none" placeholder="Tell us about your vision..."></textarea>
+                      <label htmlFor="message" className="absolute left-4 top-2 text-[10px] text-zinc-500 uppercase tracking-widest transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-5 peer-placeholder-shown:text-zinc-500 peer-focus:top-2 peer-focus:text-[10px] peer-focus:text-amber-500/80 cursor-text">Message</label>
                     </div>
 
-                    <PrimaryButton type="submit" className="w-full py-3 text-sm mt-2">
-                      Submit Inquiry
-                    </PrimaryButton>
+                    <button type="submit" className="w-full mt-4 py-3.5 font-medium text-sm rounded-xl transition-all duration-500 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#0A0A0E] shadow-[0_0_15px_rgba(245,158,11,0.2)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:border-amber-400/50 transform hover:-translate-y-1 relative overflow-hidden">
+                      <span className="relative z-10">Submit Inquiry</span>
+                    </button>
                   </form>
                 </GlassCard>
               </motion.div>
