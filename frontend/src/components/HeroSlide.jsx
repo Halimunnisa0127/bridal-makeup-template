@@ -21,7 +21,7 @@ const HeroSlide = () => {
   };
 
   return (
-    <SlideSection className="relative min-h-screen flex items-center overflow-hidden bg-[#0A0A0E] pt-[calc(5rem+env(safe-area-inset-top,0px))] lg:pt-0">
+    <SlideSection className="relative min-h-screen flex flex-col lg:flex-row items-center overflow-hidden bg-[#0A0A0E]">
       
       {/* Background Luxury Gradients & Image Glow (Optimized for performance on mobile) */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -32,12 +32,12 @@ const HeroSlide = () => {
       {/* Hero Image Section */}
       <motion.div 
         style={{ y }}
-        className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-[50%] h-[320px] sm:h-[450px] lg:h-full z-0 flex items-center justify-center overflow-visible order-1 lg:order-2"
+        className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-[50%] h-[420px] sm:h-[520px] lg:h-full z-0 flex items-center justify-center overflow-visible"
       >
         {/* Glow Aura Ring behind the image */}
         <div className="absolute w-[80%] h-[80%] bg-gradient-to-r from-amber-500/20 via-yellow-400/10 to-amber-600/20 rounded-full blur-[50px] md:blur-[100px] pointer-events-none" />
 
-        <div className="relative w-full h-full overflow-hidden rounded-2xl lg:rounded-none">
+        <div className="relative w-full h-full overflow-hidden rounded-b-[2.5rem] lg:rounded-none">
           <motion.img 
             src={bride1} 
             alt="Luxury South Indian Bridal Portrait"
