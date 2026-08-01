@@ -44,7 +44,7 @@ const ServicesSlide = () => {
   const loopedImages = [...currentImages, ...currentImages];
 
   return (
-    <SlideSection id="services" className="justify-center py-12 sm:py-16 md:py-20 relative overflow-hidden bg-slate-950">
+    <SlideSection id="services" className="justify-center py-6 sm:py-10 md:py-12 lg:py-4 xl:py-10 relative overflow-hidden bg-slate-950">
 
       {/* Optimized Background Glow */}
       <div className="hidden md:block absolute inset-0 pointer-events-none overflow-hidden">
@@ -52,30 +52,30 @@ const ServicesSlide = () => {
         <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-amber-500/5 rounded-full blur-[100px]" />
       </div>
 
-      <Container className="relative z-10 h-full flex flex-col justify-center w-full">
+      <Container className="relative z-10 h-full flex flex-col justify-center items-center w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center shrink-0 mb-6 sm:mb-10"
+          className="text-center shrink-0 mb-3 sm:mb-6 lg:mb-3 xl:mb-6"
         >
-          <SectionHeading className="text-3xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 tracking-wide text-white">
+          <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl mb-1 sm:mb-2 tracking-wide text-white">
             Signature Looks
           </SectionHeading>
-          <p className="text-zinc-400 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto font-light px-4">
+          <p className="text-zinc-400 text-xs sm:text-base md:text-lg lg:text-xs xl:text-base max-w-2xl mx-auto font-light px-4">
             Explore timeless bridal transformations crafted for every special occasion.
           </p>
         </motion.div>
 
-        {/* Scrollable category pills on mobile */}
-        <div className="flex overflow-x-auto hide-scrollbar md:flex-wrap justify-start md:justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4 w-full py-1">
+        {/* Scrollable category pills on mobile / desktop */}
+        <div className="flex overflow-x-auto hide-scrollbar md:flex-wrap justify-start md:justify-center items-center gap-2 sm:gap-3 lg:gap-4 mb-3 sm:mb-6 lg:mb-4 px-4 w-full py-1 shrink-0">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveTab(category)}
-              className={`relative shrink-0 px-4 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm md:text-base transition-all duration-300 backdrop-blur-md border ${activeTab === category
-                ? 'text-slate-950 border-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.3)]'
+              className={`relative shrink-0 inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-sm lg:text-sm transition-all duration-300 backdrop-blur-md border ${activeTab === category
+                ? 'text-slate-950 border-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.3)] font-semibold'
                 : 'text-zinc-300 border-white/10 hover:border-amber-400/50 active:bg-white/10'
                 }`}
             >
@@ -86,7 +86,7 @@ const ServicesSlide = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
-              <span className="relative z-10 font-medium tracking-wide whitespace-nowrap">{category}</span>
+              <span className="relative z-10 font-medium tracking-wide whitespace-nowrap leading-snug flex items-center justify-center">{category}</span>
             </button>
           ))}
         </div>
@@ -98,13 +98,13 @@ const ServicesSlide = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="w-full relative overflow-hidden hide-scrollbar py-4 sm:py-8"
+            className="w-full relative overflow-hidden hide-scrollbar py-2 sm:py-4 lg:py-2 shrink-0"
           >
             <div className="flex w-max animate-marquee hover:paused">
               {loopedImages.map((src, index) => (
                 <div
                   key={`${activeTab}-${index}`}
-                  className="w-[220px] sm:w-[280px] md:w-[340px] flex-shrink-0 px-2 sm:px-4 cursor-pointer group"
+                  className="w-[220px] sm:w-[270px] md:w-[300px] lg:w-[280px] xl:w-[320px] flex-shrink-0 px-2 sm:px-3 lg:px-3 cursor-pointer group"
                   onClick={() => setSelectedImage(src)}
                 >
                   <div className="relative aspect-[4/5] rounded-2xl sm:rounded-[24px] overflow-hidden transition-all duration-500 group-hover:shadow-gold group-hover:-translate-y-2">

@@ -35,27 +35,27 @@ const packages = [
 
 const PackagesSlide = () => {
   return (
-    <SlideSection id="packages" className="justify-center py-12 sm:py-16 md:py-20 relative bg-[#0A0A0E]">
+    <SlideSection id="packages" className="justify-center py-8 sm:py-12 md:py-14 lg:py-6 xl:py-12 relative bg-[#0A0A0E]">
       {/* Background Glow (desktop optimized) */}
       <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#5C4033]/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <Container className="relative z-10 w-full">
+      <Container className="relative z-10 h-full flex flex-col justify-center items-center w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-8 sm:mb-12 shrink-0"
+          className="text-center mb-4 sm:mb-8 lg:mb-4 xl:mb-8 shrink-0"
         >
-          <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl mb-2 sm:mb-3 tracking-tight">
+          <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-5xl mb-1 sm:mb-2 tracking-tight">
             Investment in <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Elegance</span>
           </SectionHeading>
-          <p className="text-zinc-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed px-2">
+          <p className="text-zinc-400 text-xs sm:text-sm md:text-base lg:text-xs xl:text-base max-w-2xl mx-auto font-light leading-relaxed px-2">
             Transparent pricing tailored to your unique requirements. Experience the pinnacle of bridal artistry.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto w-full items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 xl:gap-6 max-w-6xl mx-auto w-full items-stretch shrink-0">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
@@ -86,7 +86,7 @@ const PackagesSlide = () => {
                 >
                   {/* Tier Badge */}
                   <div className="absolute top-0 left-0 right-0 z-30">
-                    <div className={`w-full text-center py-2 text-[#0A0A0E] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] shadow-md ${
+                    <div className={`w-full text-center py-1.5 lg:py-1.5 text-[#0A0A0E] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] shadow-md ${
                       pkg.name === 'Gold'
                         ? 'bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600'
                         : pkg.name === 'Silver'
@@ -98,9 +98,9 @@ const PackagesSlide = () => {
                   </div>
                   
                   {/* Content Container */}
-                  <div className="flex flex-col h-full p-5 sm:p-6 pt-10 sm:pt-12 relative z-30">
-                    <div className={`text-center mb-5 border-b pb-5 ${pkg.highlight ? 'border-white/10' : pkg.name === 'Silver' ? 'border-[#A8A8B3]/20' : 'border-[#D1D5DB]/30'}`}>
-                      <h3 className={`text-xl lg:text-2xl font-light tracking-tight mb-1 ${
+                  <div className="flex flex-col h-full p-4 sm:p-6 lg:p-4 lg:pt-8 xl:p-6 xl:pt-10 relative z-30">
+                    <div className={`text-center mb-3 lg:mb-3 border-b pb-3 lg:pb-3 ${pkg.highlight ? 'border-white/10' : pkg.name === 'Silver' ? 'border-[#A8A8B3]/20' : 'border-[#D1D5DB]/30'}`}>
+                      <h3 className={`text-lg lg:text-xl xl:text-2xl font-light tracking-tight mb-0.5 ${
                         pkg.highlight 
                           ? 'text-transparent bg-clip-text bg-gradient-to-br from-amber-200 to-amber-600' 
                           : pkg.name === 'Silver' 
@@ -109,27 +109,27 @@ const PackagesSlide = () => {
                       }`}>
                         {pkg.name}
                       </h3>
-                      <p className="text-[10px] sm:text-xs tracking-wide font-light mb-3 uppercase text-zinc-400">{pkg.subtitle}</p>
-                      <div className="text-2xl lg:text-3xl font-light tracking-tight">
+                      <p className="text-[10px] sm:text-xs tracking-wide font-light mb-2 lg:mb-2 uppercase text-zinc-400">{pkg.subtitle}</p>
+                      <div className="text-xl lg:text-2xl xl:text-3xl font-light tracking-tight">
                         <span className="text-white">{pkg.price}</span>
                       </div>
                     </div>
 
                     {/* Features */}
-                    <div className="flex-1 space-y-2.5 mb-6">
+                    <div className="flex-1 space-y-2 lg:space-y-1.5 xl:space-y-2.5 mb-4 lg:mb-4">
                       {pkg.features.map((feature, j) => (
-                        <div key={j} className="flex items-start gap-3">
+                        <div key={j} className="flex items-start gap-2.5">
                           <div className="w-4 h-4 mt-0.5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
                             <Check size={10} strokeWidth={3} />
                           </div>
-                          <span className="text-xs sm:text-sm tracking-wide font-light leading-snug text-zinc-200">{feature}</span>
+                          <span className="text-xs sm:text-sm lg:text-xs xl:text-sm tracking-wide font-light leading-snug text-zinc-200">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Button */}
                     <div className="mt-auto pointer-events-auto">
-                      <a href="#appointment" className={`block w-full text-center py-3 font-medium text-xs sm:text-sm rounded-full transition-all duration-300 active:scale-95 ${
+                      <a href="#appointment" className={`block w-full text-center py-2.5 lg:py-2 xl:py-3 font-medium text-xs sm:text-sm rounded-full transition-all duration-300 active:scale-95 ${
                         pkg.name === 'Gold'
                           ? 'bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#0A0A0E] shadow-[0_0_15px_rgba(245,158,11,0.25)]'
                           : pkg.name === 'Silver'
