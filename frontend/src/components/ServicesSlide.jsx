@@ -100,7 +100,7 @@ const ServicesSlide = () => {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="w-full relative overflow-hidden hide-scrollbar py-4 sm:py-8"
           >
-            <div className="flex w-[200%] animate-marquee hover:paused">
+            <div className="flex w-max animate-marquee hover:paused">
               {loopedImages.map((src, index) => (
                 <div
                   key={`${activeTab}-${index}`}
@@ -157,8 +157,7 @@ const ServicesSlide = () => {
                 alt="Enlarged signature look"
                 loading="eager"
                 decoding="async"
-                className="w-full h-full object-contain max-h-[85vh] rounded-2xl select-none"
-                draggable="false"
+                className="w-full h-full object-contain max-h-[85vh] rounded-2xl"
               />
             </motion.div>
           </motion.div>
