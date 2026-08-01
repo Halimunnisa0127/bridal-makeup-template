@@ -10,7 +10,7 @@ const packages = [
   {
     name: 'Silver',
     subtitle: 'Essential Elegance',
-    price: '₹25,000',
+    price: '₹15,000',
     features: ['HD Makeup', 'Basic Hairstyling', 'Saree Draping', 'Premium Lashes', 'In-studio Service'],
     highlight: false,
     badge: 'Elegant Choice'
@@ -18,7 +18,7 @@ const packages = [
   {
     name: 'Gold',
     subtitle: 'The Signature Experience',
-    price: '₹35,000',
+    price: '₹25,000',
     features: ['Airbrush Makeup', 'Advanced Hairstyling', 'Multiple Draping Styles', 'Mink Lashes', 'Pre-wedding Consultation', 'Venue Service'],
     highlight: true,
     badge: 'Most Popular'
@@ -26,7 +26,7 @@ const packages = [
   {
     name: 'Platinum',
     subtitle: 'Uncompromised Luxury',
-    price: '₹50,000',
+    price: '₹35,000',
     features: ['Airbrush Makeup', 'Editorial Hairstyling', 'Jewelry Styling', 'Mink Lashes', 'Pre-wedding Consultation', 'Venue Service', 'Touch-up Kit', 'Trial Session'],
     highlight: false,
     badge: 'Ultimate Luxury'
