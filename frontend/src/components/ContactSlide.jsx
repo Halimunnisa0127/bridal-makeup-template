@@ -7,12 +7,12 @@ import SectionHeading from './SectionHeading';
 
 const ContactSlide = () => {
   return (
-    <SlideSection id="contact" className="justify-center py-20 relative bg-[#0A0A0E] overflow-hidden">
+    <SlideSection id="contact" className="justify-center py-5 relative bg-[#0A0A0E] overflow-hidden">
       {/* Soft Ambient Glow */}
       <div className="absolute bottom-0 right-0 w-[50%] h-[50%] bg-[#5C4033]/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <Container className="h-full flex items-center justify-center relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 w-full h-full lg:h-[80vh] max-w-6xl mx-auto items-center">
+      <Container className="h-full flex flex-col justify-center relative z-10 py-10 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 w-full max-w-6xl mx-auto items-center">
           
           {/* Left: Contact Info */}
           <motion.div 
@@ -23,7 +23,7 @@ const ContactSlide = () => {
             className="flex flex-col justify-center space-y-14"
           >
             <div>
-              <SectionHeading className="text-3xl md:text-5xl lg:text-5xl mb-4 tracking-tight">
+              <SectionHeading className="text-3xl md:text-4xl lg:text-5xl mb-2 tracking-tight">
                 Let's <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Connect</span>
               </SectionHeading>
               <p className="text-zinc-400 text-sm md:text-base font-light max-w-md leading-relaxed">
@@ -33,9 +33,9 @@ const ContactSlide = () => {
 
             <div className="space-y-8">
               {/* Highlighted WhatsApp & Phone */}
-              <div className="flex items-start gap-5 group cursor-pointer p-4 -ml-4 rounded-2xl bg-gradient-to-r from-amber-500/5 to-transparent border border-amber-500/10 hover:border-amber-500/30 hover:bg-amber-500/10 transition-all duration-300">
-                <div className="w-12 h-12 rounded-full border border-amber-500/30 bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-[#0A0A0E] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-500 shrink-0">
-                  <Phone size={20} strokeWidth={1.5} />
+              <div className="flex items-start gap-2 group cursor-pointer p-3 -ml-4 rounded-2xl bg-gradient-to-r from-amber-500/5 to-transparent border border-amber-500/10 hover:border-amber-500/30 hover:bg-amber-500/10 transition-all duration-300">
+                <div className="w-10 h-10 rounded-full border border-amber-500/30 bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-[#0A0A0E] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-500 shrink-0">
+                  <Phone size={18} strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-zinc-100 font-medium mb-1 tracking-wide flex items-center gap-2">
@@ -52,7 +52,7 @@ const ContactSlide = () => {
               {/* Email */}
               <div className="flex items-start gap-5 group cursor-pointer">
                 <div className="w-12 h-12 rounded-full border border-white/5 bg-[#17171C] flex items-center justify-center text-zinc-400 group-hover:text-amber-400 group-hover:border-amber-500/30 group-hover:bg-[#1a110a] transition-all duration-500 shrink-0">
-                  <Mail size={20} strokeWidth={1.5} />
+                  <Mail size={18} strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-zinc-100 font-medium mb-1 tracking-wide group-hover:text-amber-200 transition-colors">Email</div>
@@ -63,7 +63,7 @@ const ContactSlide = () => {
               {/* Instagram */}
               <div className="flex items-start gap-5 group cursor-pointer">
                 <div className="w-12 h-12 rounded-full border border-white/5 bg-[#17171C] flex items-center justify-center text-zinc-400 group-hover:text-amber-400 group-hover:border-amber-500/30 group-hover:bg-[#1a110a] transition-all duration-500 shrink-0">
-                  <Instagram size={20} strokeWidth={1.5} />
+                  <Instagram size={18} strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-zinc-100 font-medium mb-1 tracking-wide group-hover:text-amber-200 transition-colors">Instagram</div>
@@ -98,7 +98,7 @@ const ContactSlide = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full h-[50vh] lg:h-[90%] relative rounded-[2rem] overflow-hidden group border border-white/5 shadow-2xl"
+            className="w-full h-[50vh] lg:min-h-[500px] relative rounded-[2rem] overflow-hidden group border border-white/5 shadow-2xl"
           >
             {/* Dark overlay to match the theme over the map */}
             <div className="absolute inset-0 bg-[#0A0A0E]/30 pointer-events-none mix-blend-multiply z-10 transition-opacity duration-700 group-hover:opacity-0" />

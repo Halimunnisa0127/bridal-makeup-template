@@ -19,9 +19,9 @@ const Navbar = () => {
           <a href="#services" className="hover:text-white transition-colors">Services</a>
           <a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a>
         </div>
-        <PrimaryButton className="px-5 py-2.5 text-sm">
+        <a href="#appointment" className="px-5 py-2.5 text-sm rounded-full font-medium text-slate-950 bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-500 hover:scale-[1.02] transition-transform duration-300 inline-block">
           Book Appointment
-        </PrimaryButton>
+        </a>
       </div>
     </motion.nav>
   );

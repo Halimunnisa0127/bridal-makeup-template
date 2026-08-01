@@ -30,6 +30,24 @@ function App() {
     setCurrentSlide(slideIndex);
   };
 
+  useEffect(() => {
+    const handleAnchorClick = (e) => {
+      const target = e.target.closest('a[href^="#"]');
+      if (target) {
+        const hash = target.getAttribute('href');
+        if (hash && hash !== '#') {
+          const element = document.querySelector(hash);
+          if (element) {
+            e.preventDefault();
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }
+    };
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
   return (
     <>
       <AnimatePresence>

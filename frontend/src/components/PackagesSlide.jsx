@@ -156,7 +156,7 @@ const PackagesSlide = () => {
 
                     {/* Button */}
                     <div className="mt-auto pointer-events-auto">
-                      <button className={`w-full py-2.5 font-medium text-xs md:text-sm rounded-full transition-all duration-300 ${
+                      <a href="#appointment" className={`block w-full text-center py-2.5 font-medium text-xs md:text-sm rounded-full transition-all duration-300 ${
                         pkg.name === 'Gold'
                           ? 'bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#0A0A0E] shadow-[0_0_15px_rgba(245,158,11,0.2)] hover:shadow-[0_0_25px_rgba(245,158,11,0.4)]'
                           : pkg.name === 'Silver'
@@ -164,7 +164,7 @@ const PackagesSlide = () => {
                             : 'bg-gradient-to-r from-[#D1D5DB] via-[#FFFFFF] to-[#D1D5DB] text-[#0A0A0E] shadow-[0_0_15px_rgba(209,213,219,0.2)] hover:shadow-[0_0_25px_rgba(209,213,219,0.4)]'
                       }`}>
                         Select {pkg.name}
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </GlareHover>

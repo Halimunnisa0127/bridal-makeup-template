@@ -23,57 +23,62 @@ const HeroSlide = () => {
   return (
     <SlideSection className="relative min-h-screen flex items-center overflow-hidden bg-[#0A0A0E]">
       
-      {/* Background Luxury Gradients */}
+      {/* Background Luxury Gradients & Image Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[70%] bg-[#5C4033]/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-[-10%] right-[10%] w-[40%] h-[50%] bg-[#8B6508]/5 rounded-full blur-[120px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(10,10,14,0.8)_100%)] z-10" />
+        <div className="absolute top-1/4 right-[5%] w-[600px] h-[600px] bg-gradient-to-tr from-amber-500/20 via-amber-300/15 to-orange-500/15 rounded-full blur-[140px] animate-pulse" />
+        <div className="absolute top-1/3 right-[10%] w-[450px] h-[450px] bg-amber-400/15 rounded-full blur-[110px]" />
       </div>
 
-      {/* Hero Image with Ken Burns & Gradient Masks */}
+      {/* Hero Image Section with Gold Ambient Glow & Soft Curved Edge Blend */}
       <motion.div 
         style={{ y }}
-        className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0 overflow-hidden"
+        className="absolute inset-y-0 right-0 w-full lg:w-[62%] z-0 flex items-center justify-center overflow-hidden"
       >
-        <motion.img 
-          src={bride1} 
-          alt="Luxury South Indian Bridal Portrait"
-          animate={{ scale: [0.95, 1.02, 0.95] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-          className="w-full h-full object-cover object-top origin-top"
-        />
-        {/* Soft dark gradient overlays for readability and blending */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0E] via-[#0A0A0E]/50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0E] via-transparent to-transparent z-10 pointer-events-none" />
-        
-        {/* Subtle decorative floating particles/glows */}
-        <motion.div
-          animate={{ y: [0, -20, 0], opacity: [0.2, 0.6, 0.2], scale: [1, 1.2, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[25%] left-[25%] w-2 h-2 rounded-full bg-amber-200 blur-[2px] z-20"
-        />
-        <motion.div
-          animate={{ y: [0, 25, 0], opacity: [0.1, 0.5, 0.1], scale: [1, 1.5, 1] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-[35%] right-[25%] w-3 h-3 rounded-full bg-amber-300 blur-[3px] z-20"
-        />
-        <motion.div
-          animate={{ y: [0, -15, 0], x: [0, 10, 0], opacity: [0.1, 0.4, 0.1] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-[45%] right-[10%] w-1.5 h-1.5 rounded-full bg-amber-100 blur-[1px] z-20"
-        />
+        {/* Glow Aura Ring behind the image */}
+        <div className="absolute w-[80%] h-[80%] bg-gradient-to-r from-amber-500/25 via-yellow-400/20 to-amber-600/25 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="relative w-full h-full">
+          <motion.img 
+            src={bride1} 
+            alt="Luxury South Indian Bridal Portrait"
+            animate={{ scale: [0.98, 1.03, 0.98] }}
+            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+            className="w-full h-full object-cover object-top origin-top drop-shadow-[0_0_50px_rgba(245,158,11,0.15)]"
+          />
+          
+          {/* Seamless Curved Soft Fade Overlay (No straight lines) */}
+          <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-gradient-to-r from-[#0A0A0E] via-[#0A0A0E]/60 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A0A0E] to-transparent z-10 pointer-events-none" />
+
+          {/* Golden floating luxury sparkle particles */}
+          <motion.div
+            animate={{ y: [0, -20, 0], opacity: [0.3, 0.8, 0.3], scale: [1, 1.3, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[25%] left-[45%] w-2.5 h-2.5 rounded-full bg-amber-200 shadow-[0_0_12px_#fde047] z-20"
+          />
+          <motion.div
+            animate={{ y: [0, 25, 0], opacity: [0.2, 0.7, 0.2], scale: [1, 1.5, 1] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-[35%] right-[20%] w-3 h-3 rounded-full bg-amber-300 shadow-[0_0_15px_#f59e0b] z-20"
+          />
+          <motion.div
+            animate={{ y: [0, -15, 0], x: [0, 10, 0], opacity: [0.2, 0.6, 0.2] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute top-[45%] right-[10%] w-2 h-2 rounded-full bg-amber-100 shadow-[0_0_10px_#fff] z-20"
+          />
+        </div>
       </motion.div>
 
-      <Container className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+      <Container className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full pt-32 pb-16 lg:pt-20 lg:pb-20">
         {/* Main Content */}
-        <div className="lg:col-span-8 space-y-14 py-20 lg:py-0">
-          <div className="space-y-10">
+        <div className="lg:col-span-7 space-y-12">
+          <div className="space-y-8">
             <motion.h1 
               custom={1}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="text-3xl md:text-5xl lg:text-[3.5rem] text-white font-light tracking-tight text-balance leading-[1.15]"
+              className="text-3xl md:text-5xl lg:text-[3.5rem] text-white font-light tracking-tight text-balance leading-[1.15] drop-shadow-md"
             >
               Radiance Rooted in <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Tradition.</span>
             </motion.h1>
@@ -97,13 +102,14 @@ const HeroSlide = () => {
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6"
           >
             {/* Book Appointment: Luxury gold gradient & glow */}
-            <motion.button 
+            <motion.a 
+              href="#appointment"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="relative flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#0A0A0E] font-medium text-base md:text-lg rounded-full overflow-hidden shadow-[0_0_20px_rgba(245,158,11,0.25)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300"
+              className="relative flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#0A0A0E] font-medium text-base md:text-lg rounded-full overflow-hidden shadow-[0_0_25px_rgba(245,158,11,0.35)] hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] transition-all duration-300"
             >
               <span className="relative z-10 tracking-wide">Book Appointment</span>
-            </motion.button>
+            </motion.a>
             
             {/* WhatsApp: Glass button with icon */}
             <motion.button 
@@ -123,7 +129,7 @@ const HeroSlide = () => {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="flex flex-wrap items-center gap-6 lg:gap-8 pt-10 mt-8 border-t border-white/10"
+            className="flex flex-wrap items-center gap-6 lg:gap-8 pt-8 mt-6 border-t border-white/10"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
