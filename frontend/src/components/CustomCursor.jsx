@@ -4,10 +4,16 @@ import { motion } from 'framer-motion';
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    // Only run on desktop devices
-    if (window.matchMedia("(pointer: coarse)").matches) return;
+    // Only run on desktop devices with fine pointers and wide screens
+    if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024) {
+      setEnabled(false);
+      return;
+    }
+
+    setEnabled(true);
 
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -37,7 +43,7 @@ const CustomCursor = () => {
     };
   }, []);
 
-  if (window.matchMedia("(pointer: coarse)").matches) return null;
+  if (!enabled) return null;
 
   return (
     <>

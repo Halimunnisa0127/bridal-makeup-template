@@ -22,30 +22,30 @@ const PortfolioSlide = () => {
   const [filter, setFilter] = useState('All');
   const [selectedImg, setSelectedImg] = useState(null);
 
-  const filteredItems = portfolioItems.filter(item => filter === 'All' || item.category === filter).slice(0, 8); // Max 8 to fit viewport
+  const filteredItems = portfolioItems.filter(item => filter === 'All' || item.category === filter).slice(0, 8);
 
   return (
-    <SlideSection id="portfolio" className="justify-center py-24 md:py-20 relative overflow-hidden bg-[#0A0A0E]">
-      <Container className="h-full flex flex-col relative z-10">
+    <SlideSection id="portfolio" className="justify-center py-12 sm:py-16 md:py-20 relative overflow-hidden bg-[#0A0A0E]">
+      <Container className="h-full flex flex-col relative z-10 w-full">
         
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-8 sm:mb-10 gap-6 lg:gap-8">
           <div>
-            <SectionHeading className="text-4xl md:text-5xl lg:text-6xl mb-4 tracking-tight">
+            <SectionHeading className="text-3xl sm:text-5xl lg:text-6xl mb-2 sm:mb-4 tracking-tight">
               Signature <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Looks</span>
             </SectionHeading>
-            <p className="text-zinc-400 font-light text-lg max-w-lg leading-relaxed">
+            <p className="text-zinc-400 font-light text-sm sm:text-base md:text-lg max-w-lg leading-relaxed">
               A curated visual journey showcasing our most iconic bridal transformations.
             </p>
           </div>
           
-          {/* Categories Tab */}
-          <div className="flex flex-wrap gap-6 lg:gap-8 bg-white/5 p-2 px-6 rounded-full border border-white/10 backdrop-blur-md">
+          {/* Categories Tab (Scrollable on mobile) */}
+          <div className="w-full lg:w-auto flex overflow-x-auto hide-scrollbar gap-4 sm:gap-6 bg-white/5 p-2 px-4 sm:px-6 rounded-full border border-white/10 backdrop-blur-md">
             {categories.map(c => (
               <button
                 key={c}
                 onClick={() => setFilter(c)}
-                className={`text-sm md:text-base tracking-wide transition-all duration-300 py-2 relative ${filter === c ? 'text-amber-400' : 'text-zinc-500 hover:text-zinc-300'}`}
+                className={`text-xs sm:text-sm md:text-base tracking-wide transition-all duration-300 py-1.5 shrink-0 relative ${filter === c ? 'text-amber-400' : 'text-zinc-500 hover:text-zinc-300'}`}
               >
                 {c}
                 {filter === c && (
@@ -60,7 +60,7 @@ const PortfolioSlide = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="flex-1 grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 md:gap-6 h-[60vh] md:h-auto min-h-0">
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 h-auto min-h-0">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => (
               <motion.div
@@ -68,30 +68,30 @@ const PortfolioSlide = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 key={item.id}
-                className={`group relative overflow-hidden rounded-2xl md:rounded-[2rem] cursor-pointer bg-[#111116] border border-white/5 shadow-lg hover:shadow-amber-500/10 hover:border-amber-500/30 transition-all duration-500 ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}
+                className={`group relative overflow-hidden rounded-2xl md:rounded-[2rem] cursor-pointer bg-[#111116] border border-white/5 shadow-lg min-h-[240px] sm:min-h-[280px] ${index === 0 ? 'sm:col-span-2 sm:row-span-2' : ''}`}
                 onClick={() => setSelectedImg(item)}
               >
-                {/* Image with zoom effect */}
                 <img 
                   src={item.img} 
                   alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
                   loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 
-                {/* Dark gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0E] via-[#0A0A0E]/30 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                    <h4 className="text-white font-medium text-lg md:text-xl tracking-wide mb-2">{item.title}</h4>
-                    <p className="text-amber-400 text-xs md:text-sm uppercase tracking-[0.2em]">{item.category}</p>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0E] via-[#0A0A0E]/40 to-transparent opacity-90 sm:opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
+                  <div className="transform translate-y-0 sm:translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    <h4 className="text-white font-medium text-base sm:text-lg md:text-xl tracking-wide mb-1">{item.title}</h4>
+                    <p className="text-amber-400 text-[10px] sm:text-xs uppercase tracking-[0.2em]">{item.category}</p>
                   </div>
                 </div>
 
-                {/* Center Zoom Icon */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500 border border-white/20">
-                  <ZoomIn className="text-white w-5 h-5 md:w-6 md:h-6" />
+                {/* Zoom Icon */}
+                <div className="hidden sm:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300 border border-white/20">
+                  <ZoomIn className="text-white w-5 h-5" />
                 </div>
               </motion.div>
             ))}
@@ -99,45 +99,48 @@ const PortfolioSlide = () => {
         </div>
       </Container>
 
-      {/* Luxury Lightbox Modal */}
+      {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedImg && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0A0A0E]/95 backdrop-blur-2xl p-4 md:p-12"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0A0A0E]/95 backdrop-blur-2xl p-4 sm:p-8 pt-[env(safe-area-inset-top,1rem)]"
             onClick={() => setSelectedImg(null)}
           >
             {/* Close Button */}
             <button 
-              className="absolute top-6 right-6 md:top-10 md:right-10 w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/20 transition-all duration-300 z-50 group"
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white transition-all z-50"
               onClick={() => setSelectedImg(null)}
+              aria-label="Close modal"
             >
-              <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
+              <X size={20} />
             </button>
             
             {/* Expanded Image */}
             <motion.img
-              initial={{ scale: 0.9, y: 20 }}
+              initial={{ scale: 0.9, y: 15 }}
               animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              exit={{ scale: 0.9, y: 15 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               src={selectedImg.img}
               alt={selectedImg.title}
-              className="max-w-full max-h-[85vh] object-contain rounded-xl md:rounded-[2rem] shadow-[0_0_60px_rgba(0,0,0,0.6)] border border-white/5 relative z-40"
+              loading="eager"
+              decoding="async"
+              className="max-w-full max-h-[80vh] object-contain rounded-xl sm:rounded-[2rem] shadow-2xl border border-white/5 relative z-40"
               onClick={e => e.stopPropagation()}
             />
             
-            {/* Title & Category Info */}
+            {/* Details */}
             <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="absolute bottom-8 md:bottom-12 text-center pointer-events-none z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.15 }}
+              className="absolute bottom-6 text-center pointer-events-none z-50"
             >
-              <h3 className="text-white text-2xl md:text-4xl font-light tracking-wide mb-2 drop-shadow-lg">{selectedImg.title}</h3>
-              <p className="text-amber-400 text-sm md:text-base uppercase tracking-[0.3em] drop-shadow-md">{selectedImg.category}</p>
+              <h3 className="text-white text-xl sm:text-3xl font-light tracking-wide mb-1">{selectedImg.title}</h3>
+              <p className="text-amber-400 text-xs sm:text-sm uppercase tracking-[0.25em]">{selectedImg.category}</p>
             </motion.div>
           </motion.div>
         )}

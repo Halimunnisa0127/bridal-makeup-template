@@ -26,8 +26,18 @@ function App() {
   const totalSlides = 10;
 
   const handleScroll = (e) => {
-    const slideIndex = Math.round(e.target.scrollTop / window.innerHeight);
-    setCurrentSlide(slideIndex);
+    if (window.innerWidth >= 1024) {
+      const slideIndex = Math.round(e.target.scrollTop / window.innerHeight);
+      setCurrentSlide(slideIndex);
+    } else {
+      const sections = document.querySelectorAll('section');
+      const scrollPos = e.target.scrollTop + 100;
+      sections.forEach((sec, idx) => {
+        if (sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) {
+          setCurrentSlide(idx);
+        }
+      });
+    }
   };
 
   useEffect(() => {
@@ -60,7 +70,7 @@ function App() {
       <BackToTop show={currentSlide > 0} />
 
       <main 
-        className="relative h-[100dvh] min-h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-slate-950/0"
+        className="relative w-full max-w-full overflow-x-hidden min-h-screen h-auto lg:h-[100dvh] overflow-y-auto lg:overflow-y-scroll lg:snap-y lg:snap-mandatory scroll-smooth bg-slate-950/0"
         onScroll={handleScroll}
       >
         <Suspense fallback={<div className="h-[100dvh] w-full" />}>

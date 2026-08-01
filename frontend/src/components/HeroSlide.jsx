@@ -8,77 +8,74 @@ import { Sparkles, Star, Award } from 'lucide-react';
 
 const HeroSlide = () => {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, 250]);
+  const y = useTransform(scrollY, [0, 1000], [0, 150]);
 
   // Animation variants - Smooth and minimal
   const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: (custom) => ({
       opacity: 1, 
       y: 0,
-      transition: { duration: 1, delay: custom * 0.2, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.8, delay: custom * 0.15, ease: [0.16, 1, 0.3, 1] }
     })
   };
 
   return (
-    <SlideSection className="relative min-h-screen flex items-center overflow-hidden bg-[#0A0A0E]">
+    <SlideSection className="relative min-h-screen flex items-center overflow-hidden bg-[#0A0A0E] pt-[calc(5rem+env(safe-area-inset-top,0px))] lg:pt-0">
       
-      {/* Background Luxury Gradients & Image Glow */}
+      {/* Background Luxury Gradients & Image Glow (Optimized for performance on mobile) */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-amber-500/25 via-amber-300/15 to-orange-500/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute top-1/3 right-[15%] w-[350px] h-[350px] bg-amber-400/20 rounded-full blur-[90px]" />
+        <div className="absolute top-1/4 right-[5%] w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-gradient-to-tr from-amber-500/20 via-amber-300/10 to-orange-500/15 rounded-full blur-[60px] md:blur-[120px] animate-pulse" />
+        <div className="hidden sm:block absolute top-1/3 right-[15%] w-[350px] h-[350px] bg-amber-400/20 rounded-full blur-[90px]" />
       </div>
 
-      {/* Hero Image Section with Gold Ambient Glow (No dark black overlay) */}
+      {/* Hero Image Section */}
       <motion.div 
         style={{ y }}
-        className="absolute inset-y-0 right-0 w-full lg:w-[50%] z-0 flex items-center justify-center overflow-visible"
+        className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-[50%] h-[320px] sm:h-[450px] lg:h-full z-0 flex items-center justify-center overflow-visible order-1 lg:order-2"
       >
         {/* Glow Aura Ring behind the image */}
-        <div className="absolute w-[80%] h-[80%] bg-gradient-to-r from-amber-500/30 via-yellow-400/20 to-amber-600/30 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute w-[80%] h-[80%] bg-gradient-to-r from-amber-500/20 via-yellow-400/10 to-amber-600/20 rounded-full blur-[50px] md:blur-[100px] pointer-events-none" />
 
-        <div className="relative w-full h-full overflow-hidden">
+        <div className="relative w-full h-full overflow-hidden rounded-2xl lg:rounded-none">
           <motion.img 
             src={bride1} 
             alt="Luxury South Indian Bridal Portrait"
+            loading="eager"
+            decoding="async"
             animate={{ scale: [0.98, 1.03, 0.98] }}
             transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-            className="w-full h-full object-cover object-top origin-top drop-shadow-[0_0_50px_rgba(245,158,11,0.2)]"
+            className="w-full h-full object-cover object-top origin-top drop-shadow-[0_0_30px_rgba(245,158,11,0.2)]"
           />
           
           {/* Subtle soft left fade to smoothly transition background behind text on mobile */}
-          <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-gradient-to-r from-[#0A0A0E] via-[#0A0A0E]/60 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A0A0E] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-gradient-to-r from-[#0A0A0E] via-[#0A0A0E]/70 lg:via-[#0A0A0E]/60 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 bg-gradient-to-t from-[#0A0A0E] to-transparent z-10 pointer-events-none" />
 
-          {/* Golden floating luxury sparkle particles */}
+          {/* Golden floating luxury sparkle particles (desktop only for mobile performance) */}
           <motion.div
             animate={{ y: [0, -20, 0], opacity: [0.3, 0.8, 0.3], scale: [1, 1.3, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[25%] left-[25%] w-2.5 h-2.5 rounded-full bg-amber-200 shadow-[0_0_12px_#fde047] z-20"
+            className="hidden md:block absolute top-[25%] left-[25%] w-2.5 h-2.5 rounded-full bg-amber-200 shadow-[0_0_12px_#fde047] z-20"
           />
           <motion.div
             animate={{ y: [0, 25, 0], opacity: [0.2, 0.7, 0.2], scale: [1, 1.5, 1] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-[35%] right-[25%] w-3 h-3 rounded-full bg-amber-300 shadow-[0_0_15px_#f59e0b] z-20"
-          />
-          <motion.div
-            animate={{ y: [0, -15, 0], x: [0, 10, 0], opacity: [0.2, 0.6, 0.2] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute top-[45%] right-[15%] w-2 h-2 rounded-full bg-amber-100 shadow-[0_0_10px_#fff] z-20"
+            className="hidden md:block absolute bottom-[35%] right-[25%] w-3 h-3 rounded-full bg-amber-300 shadow-[0_0_15px_#f59e0b] z-20"
           />
         </div>
       </motion.div>
 
-      <Container className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full pt-32 pb-16 lg:pt-36 lg:pb-20">
+      <Container className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full pt-6 pb-12 sm:pt-12 sm:pb-16 lg:pt-36 lg:pb-20">
         {/* Main Content */}
-        <div className="lg:col-span-7 space-y-12">
-          <div className="space-y-8">
+        <div className="lg:col-span-7 space-y-6 sm:space-y-10 order-2 lg:order-1">
+          <div className="space-y-4 sm:space-y-6">
             <motion.h1 
               custom={1}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="text-3xl md:text-5xl lg:text-[3.5rem] text-white font-light tracking-tight text-balance leading-[1.15] drop-shadow-md"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] text-white font-light tracking-tight text-balance leading-[1.18] drop-shadow-md"
             >
               Radiance Rooted in <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Tradition.</span>
             </motion.h1>
@@ -88,7 +85,7 @@ const HeroSlide = () => {
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="text-base md:text-lg lg:text-xl text-zinc-300 max-w-2xl font-light leading-relaxed tracking-wide opacity-90"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-zinc-300 max-w-2xl font-light leading-relaxed tracking-wide opacity-90"
             >
               Elevating South Indian bridal elegance with editorial precision. A signature fusion of timeless Telugu heritage and modern luxury aesthetics.
             </motion.p>
@@ -99,74 +96,67 @@ const HeroSlide = () => {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6"
           >
-            {/* Book Appointment: Luxury gold gradient & glow */}
+            {/* Book Appointment CTA */}
             <motion.a 
               href="#appointment"
-              whileHover={{ scale: 1.03, y: -2 }}
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#0A0A0E] font-medium text-base md:text-lg rounded-full overflow-hidden shadow-[0_0_25px_rgba(245,158,11,0.35)] hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] transition-all duration-300"
+              className="relative flex items-center justify-center min-h-[48px] px-7 py-3.5 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#0A0A0E] font-medium text-base rounded-full shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300 text-center"
             >
               <span className="relative z-10 tracking-wide">Book Appointment</span>
             </motion.a>
             
-            {/* WhatsApp: Glass button with icon */}
-            <motion.button 
-              whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.08)" }}
+            {/* WhatsApp CTA */}
+            <motion.a 
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-md text-white font-medium text-base md:text-lg rounded-full border border-white/10 hover:border-white/30 transition-all duration-300 group overflow-hidden"
+              className="relative flex items-center justify-center gap-3 min-h-[48px] px-7 py-3.5 bg-white/5 md:backdrop-blur-md text-white font-medium text-base rounded-full border border-white/10 hover:border-white/30 active:bg-white/10 transition-all duration-300 group overflow-hidden"
             >
-              <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
-              <FaWhatsapp className="relative z-10 text-2xl text-green-400 group-hover:text-green-300 transition-colors drop-shadow-md" />
+              <FaWhatsapp className="relative z-10 text-xl text-green-400 group-hover:text-green-300 transition-colors drop-shadow-md" />
               <span className="relative z-10 tracking-wide">Contact on WhatsApp</span>
-            </motion.button>
+            </motion.a>
           </motion.div>
 
-          {/* Trust Badges - Improved Spacing & Icons */}
+          {/* Trust Badges */}
           <motion.div
             custom={4}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="flex flex-wrap items-center gap-6 lg:gap-8 pt-8 mt-6"
+            className="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-8 pt-4 sm:pt-6 border-t border-white/5 mt-4"
           >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
-                  <Star className="w-4 h-4 text-amber-400" />
-                </div>
-                <span className="text-zinc-300 text-xs md:text-sm font-medium uppercase tracking-wider">500+ Happy Brides</span>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
               </div>
-              
-              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-amber-500/40 shadow-[0_0_8px_#f59e0b]" />
-              
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
-                  <Sparkles className="w-4 h-4 text-amber-400" />
-                </div>
-                <span className="text-zinc-300 text-xs md:text-sm font-medium uppercase tracking-wider">Premium Products</span>
+              <span className="text-zinc-300 text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wider">500+ Happy Brides</span>
+            </div>
+            
+            <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-amber-500/40" />
+            
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
               </div>
-              
-              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-amber-500/40 shadow-[0_0_8px_#f59e0b]" />
-              
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
-                  <Award className="w-4 h-4 text-amber-400" />
-                </div>
-                <span className="text-zinc-300 text-xs md:text-sm font-medium uppercase tracking-wider">Certified Artist</span>
+              <span className="text-zinc-300 text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wider">Premium Products</span>
+            </div>
+            
+            <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-amber-500/40" />
+            
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
               </div>
+              <span className="text-zinc-300 text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wider">Certified Artist</span>
+            </div>
           </motion.div>
         </div>
       </Container>
-
-      {/* Shimmer CSS for Glass Button */}
-      <style>{`
-        @keyframes shimmer {
-          100% {
-            transform: translateX(150%);
-          }
-        }
-      `}</style>
     </SlideSection>
   );
 };
