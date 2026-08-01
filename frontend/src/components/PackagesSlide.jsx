@@ -98,9 +98,9 @@ const PackagesSlide = () => {
                   </div>
                   
                   {/* Content Container */}
-                  <div className="flex flex-col h-full p-4 sm:p-6 lg:p-4 lg:pt-8 xl:p-6 xl:pt-10 relative z-30">
-                    <div className={`text-center mb-3 lg:mb-3 border-b pb-3 lg:pb-3 ${pkg.highlight ? 'border-white/10' : pkg.name === 'Silver' ? 'border-[#A8A8B3]/20' : 'border-[#D1D5DB]/30'}`}>
-                      <h3 className={`text-lg lg:text-xl xl:text-2xl font-light tracking-tight mb-0.5 ${
+                  <div className="flex flex-col h-full pt-10 pb-5 px-5 sm:p-6 lg:p-4 lg:pt-8 xl:p-6 xl:pt-10 relative z-30">
+                    <div className={`text-center mb-4 lg:mb-3 border-b pb-4 lg:pb-3 ${pkg.highlight ? 'border-white/10' : pkg.name === 'Silver' ? 'border-[#A8A8B3]/20' : 'border-[#D1D5DB]/30'}`}>
+                      <h3 className={`text-xl lg:text-xl xl:text-2xl font-light tracking-tight mb-1 ${
                         pkg.highlight 
                           ? 'text-transparent bg-clip-text bg-gradient-to-br from-amber-200 to-amber-600' 
                           : pkg.name === 'Silver' 
@@ -110,13 +110,13 @@ const PackagesSlide = () => {
                         {pkg.name}
                       </h3>
                       <p className="text-[10px] sm:text-xs tracking-wide font-light mb-2 lg:mb-2 uppercase text-zinc-400">{pkg.subtitle}</p>
-                      <div className="text-xl lg:text-2xl xl:text-3xl font-light tracking-tight">
+                      <div className="text-2xl lg:text-2xl xl:text-3xl font-light tracking-tight">
                         <span className="text-white">{pkg.price}</span>
                       </div>
                     </div>
 
                     {/* Features */}
-                    <div className="flex-1 space-y-2 lg:space-y-1.5 xl:space-y-2.5 mb-4 lg:mb-4">
+                    <div className="flex-1 space-y-2.5 lg:space-y-1.5 xl:space-y-2.5 mb-5 lg:mb-4">
                       {pkg.features.map((feature, j) => (
                         <div key={j} className="flex items-start gap-2.5">
                           <div className="w-4 h-4 mt-0.5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
@@ -129,7 +129,7 @@ const PackagesSlide = () => {
 
                     {/* Button */}
                     <div className="mt-auto pointer-events-auto">
-                      <a href="#appointment" className={`block w-full text-center py-2.5 lg:py-2 xl:py-3 font-medium text-xs sm:text-sm rounded-full transition-all duration-300 active:scale-95 ${
+                      <a href="#appointment" className={`block w-full text-center py-3 lg:py-2 xl:py-3 font-medium text-xs sm:text-sm rounded-full transition-all duration-300 active:scale-95 ${
                         pkg.name === 'Gold'
                           ? 'bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#0A0A0E] shadow-[0_0_15px_rgba(245,158,11,0.25)]'
                           : pkg.name === 'Silver'

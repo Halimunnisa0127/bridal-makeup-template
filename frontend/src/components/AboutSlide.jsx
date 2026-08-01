@@ -38,28 +38,28 @@ const AboutSlide = () => {
               hidden: { opacity: 0, scale: 0.95 },
               visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
             }}
-            className="lg:col-span-5 relative h-[260px] sm:h-[380px] lg:h-[55vh] xl:h-[65vh] max-h-[440px] lg:max-h-[400px] xl:max-h-[480px] rounded-2xl sm:rounded-[2rem] overflow-hidden group shrink-0"
+            className="lg:col-span-5 relative h-[340px] sm:h-[380px] lg:h-[55vh] xl:h-[65vh] max-h-[460px] lg:max-h-[400px] xl:max-h-[480px] rounded-2xl sm:rounded-[2rem] overflow-hidden group shrink-0"
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0E]/90 via-[#0A0A0E]/30 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0E]/90 via-[#0A0A0E]/20 to-transparent z-10" />
             <img 
               src={bride3}
               alt="Siri - Lead Makeup Artist"
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover object-top scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-out"
+              className="w-full h-full object-cover object-[center_15%] scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-out"
             />
             
-            <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 z-20">
-              <GlassCard className="p-3 sm:p-5 lg:p-3 xl:p-5 backdrop-blur-md md:backdrop-blur-xl bg-[#0A0A0E]/70 border-white/10 shadow-2xl">
+            <div className="absolute bottom-2 left-2 right-2 sm:bottom-6 sm:left-6 sm:right-6 z-20">
+              <GlassCard className="py-1 px-3 sm:p-5 lg:p-3 xl:p-5 backdrop-blur-md md:backdrop-blur-xl bg-[#0A0A0E]/85 sm:bg-[#0A0A0E]/70 border-white/10 shadow-2xl">
                 <div className="flex justify-around items-center">
-                  <div className="text-center px-2">
-                    <div className="text-xl sm:text-3xl lg:text-2xl xl:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-br from-amber-200 to-amber-600 mb-0.5 sm:mb-1 tracking-tight">12+</div>
-                    <div className="text-[9px] sm:text-xs text-zinc-400 uppercase tracking-[0.2em] font-medium">Years Exp.</div>
+                  <div className="text-center px-1">
+                    <div className="text-sm sm:text-3xl lg:text-2xl xl:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-br from-amber-200 to-amber-600 tracking-tight">12+</div>
+                    <div className="text-[8px] sm:text-xs text-zinc-400 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-medium">Years Exp.</div>
                   </div>
-                  <div className="h-8 sm:h-12 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-                  <div className="text-center px-2">
-                    <div className="text-xl sm:text-3xl lg:text-2xl xl:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-br from-amber-200 to-amber-600 mb-0.5 sm:mb-1 tracking-tight">500+</div>
-                    <div className="text-[9px] sm:text-xs text-zinc-400 uppercase tracking-[0.2em] font-medium">Happy Brides</div>
+                  <div className="h-4 sm:h-12 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                  <div className="text-center px-1">
+                    <div className="text-sm sm:text-3xl lg:text-2xl xl:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-br from-amber-200 to-amber-600 tracking-tight">500+</div>
+                    <div className="text-[8px] sm:text-xs text-zinc-400 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-medium">Happy Brides</div>
                   </div>
                 </div>
               </GlassCard>
