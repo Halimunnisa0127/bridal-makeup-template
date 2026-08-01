@@ -157,7 +157,8 @@ const ServicesSlide = () => {
                 alt="Enlarged signature look"
                 loading="eager"
                 decoding="async"
-                className="w-full h-full object-contain max-h-[85vh] rounded-2xl"
+                className="w-full h-full object-contain max-h-[85vh] rounded-2xl select-none"
+                draggable="false"
               />
             </motion.div>
           </motion.div>
