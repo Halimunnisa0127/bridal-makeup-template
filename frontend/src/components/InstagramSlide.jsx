@@ -28,7 +28,7 @@ const InstagramSlide = () => {
         >
           <div className="flex items-center justify-center gap-3 mb-4 text-zinc-400">
             <Instagram size={24} />
-            <span className="tracking-widest uppercase text-sm font-medium">@siriluxurymua</span>
+            <span className="tracking-widest uppercase text-sm font-medium">@sriluxuryuma</span>
           </div>
           <SectionHeading className="text-4xl md:text-5xl mb-6">Join the Community</SectionHeading>
           
