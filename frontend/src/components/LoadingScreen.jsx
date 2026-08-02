@@ -22,7 +22,7 @@ const LoadingScreen = ({ onComplete }) => {
         transition={{ duration: 0.8 }}
         className="text-2xl font-medium tracking-widest text-white mb-8"
       >
-        SIRI<span className="text-zinc-500">MUA</span>
+        SRI<span className="text-zinc-500">UMA</span>
       </motion.div>
       <div className="w-48 h-px bg-white/10 relative overflow-hidden">
         <motion.div 
