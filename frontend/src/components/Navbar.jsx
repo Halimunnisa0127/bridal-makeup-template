@@ -26,8 +26,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="text-lg sm:text-xl font-medium tracking-tighter text-white flex items-center gap-1.5 focus-visible:outline-none">
-          <span>SIRI</span>
-          <span className="text-amber-400 font-semibold">MUA</span>
+          <span>SRI</span>
+          <span className="text-amber-400 font-semibold">UMA</span>
         </a>
 
         {/* Desktop Links */}
