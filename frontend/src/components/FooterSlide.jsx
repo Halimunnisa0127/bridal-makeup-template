@@ -70,7 +70,7 @@ const FooterSlide = () => {
 
         {/* Copyright & Legal */}
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] sm:text-xs text-zinc-500 font-light tracking-wide">
-          <div>&copy; {new Date().getFullYear()} Siri Luxury MUA. All rights reserved.</div>
+          <div>&copy; {new Date().getFullYear()} Sri Luxury UMA. All rights reserved.</div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-amber-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-amber-400 transition-colors">Terms of Service</a>
