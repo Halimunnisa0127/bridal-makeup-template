@@ -8,7 +8,7 @@ import GlareHover from './GlareHover';
 
 const packages = [
   {
-    name: 'Silver',
+    name: 'Silver Bridal Package',
     subtitle: 'Essential Elegance',
     price: '₹15,000',
     features: ['HD Makeup', 'Basic Hairstyling', 'Saree Draping', 'Premium Lashes', 'In-studio Service'],
@@ -16,7 +16,7 @@ const packages = [
     badge: 'Elegant Choice'
   },
   {
-    name: 'Gold',
+    name: 'Gold Bridal Package',
     subtitle: 'The Signature Experience',
     price: '₹25,000',
     features: ['Airbrush Makeup', 'Advanced Hairstyling', 'Multiple Draping Styles', 'Mink Lashes', 'Pre-wedding Consultation', 'Venue Service'],
@@ -24,7 +24,7 @@ const packages = [
     badge: 'Most Popular'
   },
   {
-    name: 'Platinum',
+    name: 'Platinum Bridal Package',
     subtitle: 'Uncompromised Luxury',
     price: '₹35,000',
     features: ['Airbrush Makeup', 'Editorial Hairstyling', 'Jewelry Styling', 'Mink Lashes', 'Pre-wedding Consultation', 'Venue Service', 'Touch-up Kit', 'Trial Session'],
