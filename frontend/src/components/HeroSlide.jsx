@@ -88,7 +88,7 @@ const HeroSlide = () => {
               variants={fadeUp}
               className="text-sm sm:text-base md:text-lg lg:text-xl text-zinc-200 max-w-2xl font-light leading-relaxed tracking-wide opacity-95 drop-shadow-md"
             >
-              Elevating South Indian bridal elegance with editorial precision. A signature fusion of timeless Telugu heritage and modern luxury aesthetics.
+          Creating timeless bridal looks inspired by South Indian traditions and crafted with modern elegance.
             </motion.p>
           </div>
           
