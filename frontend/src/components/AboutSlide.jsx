@@ -43,7 +43,7 @@ const AboutSlide = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0E]/90 via-[#0A0A0E]/20 to-transparent z-10" />
             <img 
               src={bride3}
-              alt="Siri - Lead Makeup Artist"
+              alt="Sri - Lead Makeup Artist"
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover object-[center_15%] scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-out"
