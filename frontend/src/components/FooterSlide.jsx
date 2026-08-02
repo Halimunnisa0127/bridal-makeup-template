@@ -17,7 +17,7 @@ const FooterSlide = () => {
             {/* Logo & About */}
             <div className="md:col-span-5 space-y-6">
               <div className="text-3xl sm:text-4xl font-light tracking-widest text-zinc-100">
-                SIRI<span className="text-amber-500/80 font-medium">MUA</span>
+                SRI<span className="text-amber-500/80 font-medium">UMA</span>
               </div>
               <p className="text-zinc-400 font-light leading-relaxed max-w-sm text-xs sm:text-sm md:text-base">
                 Elevating South Indian bridal elegance with editorial precision and uncompromised luxury. Your vision, flawlessly executed.
