@@ -44,7 +44,7 @@ const WhyChooseUsSlide = () => {
           className="text-center mb-10 sm:mb-16 shrink-0"
         >
           <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl mb-3 tracking-tight">
-            The <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Siri Standard</span>
+            The <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Sri Standard</span>
           </SectionHeading>
           <p className="text-zinc-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed px-2">
             Uncompromising quality and dedication to the craft. We go above and beyond to ensure your special day is truly flawless.
