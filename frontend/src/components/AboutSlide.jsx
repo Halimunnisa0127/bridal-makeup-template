@@ -79,7 +79,7 @@ const AboutSlide = () => {
                 The Artist's <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">Journey</span>
               </SectionHeading>
               <p className="text-xs sm:text-base md:text-lg lg:text-xs xl:text-lg text-zinc-300 font-light leading-relaxed tracking-wide opacity-90 max-w-2xl">
-                Hi, I'm Siri. For over a decade, I've dedicated myself to the art of luxury bridal makeup. My approach blends the rich, timeless aesthetics of South Indian heritage with a modern, editorial edge. I believe in enhancing your natural radiance—creating a signature look that feels authentically you.
+                Hi, I'm SriUma. For over a decade, I've dedicated myself to the art of luxury bridal makeup. My approach blends the rich, timeless aesthetics of South Indian heritage with a modern, editorial edge. I believe in enhancing your natural radiance—creating a signature look that feels authentically you.
               </p>
             </motion.div>
 
